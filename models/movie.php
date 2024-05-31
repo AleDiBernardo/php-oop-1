@@ -7,16 +7,20 @@ class Movie {
     private int $duration;
     private string $rating;
     private string $language;
+    private Genre $genre;
 
     public function __construct(
         string $title,
         string $director,
         string $release_date,
+        Genre $genre
         
     ) {
         $this->title = $title;
         $this->director = $director;
         $this->release_date = $release_date;
+        $this->genre = $genre;
+
 
     }
    
@@ -26,24 +30,28 @@ class Movie {
         return $this->title;
     }
 
-    public function getDirector(): string {
+    public function getDirector() {
         return $this->director;
     }
 
-    public function getReleaseDate(): string {
+    public function getReleaseDate() {
         return $this->release_date;
     }
 
-    public function getDuration(): int {
+    public function getDuration(){
         return $this->duration;
     }
 
-    public function getRating(): string {
+    public function getRating() {
         return $this->rating;
     }
 
-    public function getLanguage(): string {
+    public function getLanguage() {
         return $this->language;
+    }
+
+    public function getGenre() {
+        return $this->genre;
     }
 
     // SETTER METHODS
