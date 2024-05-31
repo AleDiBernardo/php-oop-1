@@ -48,7 +48,7 @@ $movies_list = [$movie1, $movie2];
 <body>
 
     <div class="container">
-        <div class="row gap-4">
+        <div class="row gap-4 justify-content-center">
             <?php for ($i = 0; $i < count($movies_list); $i++) {?>
                 <div class="card" style="width: 18rem;">
                     <div class="card-header fw-bold">
