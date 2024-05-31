@@ -20,12 +20,22 @@ $actor5 = new Actor("Michelangelo", "Pagano", 37, 180);
 $actor6 = new Actor("Walter", "Bonvecchio", 34, 167);
 
 // Creazione array contenenti attori
-$cast = [$actor1, $actor2, $actor3];
-$cast2 = [$actor4, $actor5, $actor6];
+
+$movie1->addCastActor($actor1);
+$movie1->addCastActor($actor2);
+$movie1->addCastActor($actor3);
+
+$movie2->addCastActor($actor4);
+$movie2->addCastActor($actor5);
+$movie2->addCastActor($actor6);
+// $cast = [$actor1, $actor2, $actor3];
+// $cast2 = [$actor4, $actor5, $actor6];
 
 // Settaggio dei cast
-$movie1->setCast($cast);
-$movie2->setCast($cast2);
+// $movie1->setCast($cast);
+// $movie2->setCast($cast2);
+
+// var_dump($movie1->getCast());
 
 // var_dump($movie1->getTitle(), $movie1->getDirector(), $movie1->getReleaseDate(), $movie1->getGenre(), $movie1->getCast());
 // echo '<br><hr><br>';
@@ -58,9 +68,16 @@ $movies_list = [$movie1, $movie2];
                         <li class="list-group-item"><?=$movies_list[$i]->getDirector();?></li>
                         <li class="list-group-item"><?=$movies_list[$i]->getReleaseDate();?></li>
                         <li class="list-group-item"><?=$movies_list[$i]->getGenre()->getName()?></li>
+                        <li class="list-group-item">
+                            <div>Cast: </div>
+                            <?php for ($j = 0; $j < count($movies_list[$i]->getCast()); $j++) {?>
+                                <?=$movies_list[$i]->getCast()[$j]->getName() . " " . $movies_list[$i]->getCast()[$j]->getSurname()?>
+                                <?= '<br>'; ?>
+                            <?php }?>
+                        </li>
                         <li class="list-group-item"><?=$movies_list[$i]->getGenre()->getDescription()?></li>
                     </ul>
-                </div>  
+                </div>
             <?php }?>
         </div>
     </div>

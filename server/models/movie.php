@@ -84,8 +84,12 @@ class Movie {
         $this->language = $language;
     }
 
-    public function setCast(array $cast) {
-        $this->cast = $cast;
-    }
+    // public function setCast(array $cast) {
+    //     $this->cast = $cast;
+    // }
 
+    // Methods to add an actor to cast array
+    public function addCastActor(Actor $actor) {
+        $this->cast[] = $actor;
+    }
 }
