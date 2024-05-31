@@ -6,6 +6,7 @@ class Movie {
     private string $release_date;
     private int $duration;
     private string $rating;
+    private array $cast;
     private string $language;
     private Genre $genre;
 
@@ -54,6 +55,10 @@ class Movie {
         return $this->genre;
     }
 
+    public function getCast() {
+        return $this->cast;
+    }
+
     // SETTER METHODS
     public function setTitle(string $title){
         $this->title = $title;
@@ -77,6 +82,10 @@ class Movie {
 
     public function setLanguage(string $language) {
         $this->language = $language;
+    }
+
+    public function setCast(array $cast) {
+        $this->cast = $cast;
     }
 
 }
